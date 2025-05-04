@@ -1,0 +1,7 @@
+<!--<Project Sdk="Microsoft.Build.NoTargets/3.2.14">-->
+     <Project Sdk="Microsoft.NET.Sdk"> 
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    </PropertyGroup>     
+</Project>

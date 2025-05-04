@@ -1,0 +1,35 @@
+ <!--<Project Sdk="Microsoft.Build.NoTargets/3.2.14"> -->
+    <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AzureFunctionsVersion>v4</AzureFunctionsVersion> 
+        <LangVersion>8</LangVersion>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+        <RootNamespace>What.The.Func</RootNamespace>
+    </PropertyGroup> 
+ 
+    <ItemGroup>
+        <None Update="host.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>  
+        <!-- <None Include="extensions.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          </None> -->
+    </ItemGroup>  
+    <ItemGroup>
+      <PackageReference Include="Aliencube.AzureFunctions.Extensions.OpenApi" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="4.0.1" />
+      <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.5.0" />
+    </ItemGroup>  
+    <ItemGroup>
+      <Content Include="HelloWorld\function.proj" />
+      <Content Include="RenderOpenApiDocument\function.proj" />
+      <Content Include="RenderSwaggerUI\function.proj" />
+      <Content Include="Swagger\function.proj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="**\*.csx" /> 
+    </ItemGroup>
+</Project>
